@@ -87,6 +87,7 @@ function DriverAvatar({
 
 export default function Home() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [authError, setAuthError] = useState("");
 
@@ -173,8 +174,8 @@ export default function Home() {
   };
 
   const onLogin = async () => {
-    if (CREDS.password !== password) {
-      setAuthError("Invalid password");
+    if (CREDS.email !== email.trim().toLowerCase() || CREDS.password !== password) {
+      setAuthError("Invalid credentials");
       return;
     }
     setAuthError("");
@@ -302,7 +303,15 @@ export default function Home() {
             <p>Secure admin access</p>
             <label>
               Email
-              <input value={CREDS.email} disabled className="fd-disabled-input" />
+              <input
+                type="email"
+                value={email}
+                placeholder="Enter email"
+                onChange={(event) => setEmail(event.target.value)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter") onLogin();
+                }}
+              />
             </label>
             <label>
               Password
@@ -356,6 +365,7 @@ export default function Home() {
             type="button"
             onClick={() => {
               setLoggedIn(false);
+              setEmail("");
               setPassword("");
               setSelectedIds(new Set());
               setTab("drivers");
