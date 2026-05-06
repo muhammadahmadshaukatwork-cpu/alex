@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
 
 type Driver = { id: string; fieldData: Record<string, unknown> };
@@ -67,11 +68,14 @@ function DriverAvatar({
   const imageSrc = src?.trim() ?? "";
 
   if (imageSrc && !hasError) {
-    // eslint-disable-next-line @next/next/no-img-element
+    const size = large ? 72 : 32;
     return (
-      <img
+      <Image
         src={imageSrc}
         alt={name}
+        width={size}
+        height={size}
+        unoptimized
         className={`fd-avatar ${large ? "large" : ""}`}
         onError={() => setHasError(true)}
       />
