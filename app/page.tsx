@@ -18,7 +18,7 @@ type FleetPayload = {
 const CREDS = { email: "admin@fleet.com", password: "fleet2024" };
 const STATUS_COLORS: Record<string, string> = {
   approved: "#3fb950",
-  pending: "#f0883e",
+  pending: "#0a4cbd",
   suspend: "#f85149",
 };
 

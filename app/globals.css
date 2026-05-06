@@ -10,7 +10,7 @@
   --text2: #8b949e;
   --green: #3fb950;
   --red: #f85149;
-  --amber: #f0883e;
+  --amber: #0a4cbd;
   --blue: #388bfd;
   --radius: 10px;
 }
@@ -132,7 +132,7 @@ body {
   margin-top: 6px;
   border: none;
   background: var(--amber);
-  color: #0d1117;
+  color: #e6edf3;
   padding: 11px 14px;
   border-radius: var(--radius);
   font-weight: 600;
@@ -387,8 +387,8 @@ div.fd-avatar {
 }
 
 .status-pending {
-  color: var(--amber);
-  background: #3d2810;
+  color: #7eb0ff;
+  background: #0d1a2e;
 }
 
 .status-suspend {
@@ -571,8 +571,8 @@ div.fd-avatar {
 }
 
 .fd-insight-icon.amber {
-  color: #ffaf63;
-  background: #3c2b17;
+  color: #7eb0ff;
+  background: #132847;
 }
 
 .fd-insight-icon.purple {
@@ -665,7 +665,7 @@ div.fd-avatar {
 }
 
 .dot.status-pending {
-  background: #f0883e;
+  background: #0a4cbd;
 }
 
 .dot.status-suspend {
@@ -741,7 +741,7 @@ div.fd-avatar {
 .fd-vbar-track > div {
   width: 100%;
   border-radius: 8px;
-  background: linear-gradient(180deg, #ffb26f, #5e95ff);
+  background: linear-gradient(180deg, #0a4cbd, #5e95ff);
 }
 
 .fd-vbar-meta {
